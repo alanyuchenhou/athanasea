@@ -1,2 +1,3 @@
 # athanasea
-we need a short description here, something like: a fish adoption game
+[![ZenHub] (https://raw.githubusercontent.com/ZenHubIO/support/master/zenhub-badge.png)] (https://zenhub.io)
+
