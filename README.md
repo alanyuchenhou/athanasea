@@ -1,3 +1,2 @@
-# athanasea
-[![ZenHub] (https://raw.githubusercontent.com/ZenHubIO/support/master/zenhub-badge.png)] (https://zenhub.io)
-
+# Athanasea
+Athanasea is an advanced virtual animal adoption web app built with [Meteor](http://meteor.com)
