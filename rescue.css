@@ -1,0 +1,18 @@
+.animal_item{
+    position: relative;
+    float: left;
+    line-height: 0px;
+}
+.animal_item img{
+    height: auto;
+    width: 100%;
+}
+.turtle_dialog{
+    z-index: 1;
+    display: none;
+    position: absolute;
+    margin-left: 50px;
+    margin-top:50px;
+    height: 500px;
+    width: 800px;
+}

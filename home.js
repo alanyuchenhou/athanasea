@@ -10,5 +10,9 @@ if (Meteor.isClient) {
     $(".submit").hide();
     $(".search").hide();
   });
-
+  Template.athanasea_trunk.events({
+    "click .resuce": function () {
+      FlowRouter.go('/rescue');
+    }
+  });
 }
