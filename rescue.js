@@ -1,7 +1,7 @@
 FlowRouter.route('/rescue', {
   name: "home",
   action: function(params, queryParams) {
-    BlazeLayout.render("layout", {main: "rescue"});
+    BlazeLayout.render("layout", {main: "rescue"});//来到rescue页面将main替换成rescue模板
   }
 });
 if(Meteor.isClient) {

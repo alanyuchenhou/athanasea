@@ -12,6 +12,7 @@
           {{else}}
             {{> Template.dynamic template=adminMenu}}
             {{> modules zone="contentTop"}}
+          <!--名字为main的动态模板 通过router控制显示内容 转到 ① -->
             {{> Template.dynamic template=main}}
             {{> modules zone="contentBottom"}}
           {{/if}}
