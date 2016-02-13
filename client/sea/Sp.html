@@ -1,0 +1,16 @@
+<template name="Sp">
+    <article class="recipe">
+        <h3>{{name}}</h3>
+        {{#if editMode}}
+            {{> quickForm collection="Spp" id=updateSpId type="update" doc=this autosave=true}}
+        {{else}}
+            <p>description: {{description}}</p>
+            <p>lifespan: {{lifespan}}</p>
+            {{#each subspp}}
+                <p>{{name}}, possibility: {{possibility}}, {{picture}}</p>
+            {{/each}}
+        {{/if}}
+        <i class="fa fa-pencil"></i>
+        <i class="fa fa-trash"></i>
+    </article>
+</template>

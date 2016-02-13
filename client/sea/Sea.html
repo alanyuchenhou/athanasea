@@ -1,0 +1,16 @@
+<template name="Sea">
+    <section class="recipes">
+        {{#if Template.subscriptionsReady}}
+            {{#each getSpp}}
+                {{> Sp}}
+            {{/each}}
+        {{else}}
+            <p>Loading...</p>
+        {{/if}}
+    </section>
+    {{#if $.Session.get 'newRecipe'}}
+        {{> NewSp}}
+    {{else}}
+        <button class="new-recipe">create new species</button>
+    {{/if}}
+</template>
