@@ -20,7 +20,7 @@ Template.Sp.events({
         Meteor.call('toggleMenuItem', this._id, this.inMenu);
     },
     'click .fa-ambulance': function () {
-        Meteor.call('addAnimal', this._id, this.subspp[0].name);
+        Meteor.call('addAnimal', this._id, this.subspp);
     },
     'click .fa-trash': function () {
         Meteor.call('deleteSp', this._id);
