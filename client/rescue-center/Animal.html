@@ -1,0 +1,16 @@
+<template name="Animal">
+    <article class="recipe">
+        <h3>{{name}}</h3>
+        {{#if editMode}}
+            {{> quickForm collection="Animals" id=updateAnimalId type="update" doc=this autosave=true}}
+        {{else}}
+            <p>description: {{description}}</p>
+            <p>species ID: {{spId}}</p>
+            <p>species name: {{spName}}</p>
+            <p>subspecies name: {{subSpName}}</p>
+            <p>subspecies picture: {{subSpPicture}}</p>
+        {{/if}}
+        <i class="fa fa-pencil"></i>
+        <i class="fa fa-trash"></i>
+    </article>
+</template>

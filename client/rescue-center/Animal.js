@@ -2,28 +2,22 @@
  * Created by yuchen on 2/12/16.
  */
 
-Template.Sp.onCreated(function () {
+Template.Animal.onCreated(function () {
     this.editMode = new ReactiveVar(false);
 });
 
-Template.Sp.helpers({
-    updateSpId: function () {
-        return this._id;
-    },
+Template.Animal.helpers({
     editMode: function () {
         return Template.instance().editMode.get();
     }
 });
 
-Template.Sp.events({
+Template.Animal.events({
     'click .toggle-menu': function () {
         Meteor.call('toggleMenuItem', this._id, this.inMenu);
     },
-    'click .fa-ambulance': function () {
-        Meteor.call('addAnimal', this._id, this.subspp[0].name);
-    },
     'click .fa-trash': function () {
-        Meteor.call('deleteSp', this._id);
+        Meteor.call('deleteAnimal', this._id);
     },
     'click .fa-pencil': function (event, template) {
         template.editMode.set(!template.editMode.get());

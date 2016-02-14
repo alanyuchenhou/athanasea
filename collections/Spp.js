@@ -25,6 +25,7 @@ Subsp = new SimpleSchema({
         type: String
     }
 });
+
 SpSchema = new SimpleSchema({
     name: {
         type: String,
