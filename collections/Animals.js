@@ -65,8 +65,19 @@ Meteor.methods({
     deleteAnimal: function (id) {
         Animals.remove(id);
     },
-    addAnimal: function (spId, subSpName) {
-        Animals.insert({spId: spId, subSpName: subSpName});
+    addAnimal: function (spId, subSpObj) {
+        //random pick
+        var _n = Math.random();
+        //linear normalize  xnorm = x-xmin/xmax-xmin
+        for(var i = 0 ; i < subSpObj.length-1; i++){
+            subSpObj[i+1].possibility += subSpObj[i].possibility;
+        }
+        for(i = 0 ; i < subSpObj.length; i++){
+         if ( _n <= subSpObj[i].possibility/subSpObj[subSpObj.length-1].possibility){
+             Animals.insert({spId: spId, subSpName: subSpObj[i].name});
+             return;
+         }
+        }
     }
 });
 
