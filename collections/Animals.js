@@ -33,7 +33,7 @@ AnimalSchema = new SimpleSchema({
             type: 'hidden'
         }
     },
-    subSpName: {
+    subspName: {
         type: String,
         autoform: {
             type: 'hidden'
@@ -61,13 +61,36 @@ AnimalSchema = new SimpleSchema({
     }
 });
 
+Animals.attachSchema(AnimalSchema);
+
+Animals.helpers({
+    spInfo: function () {
+        var sp = Spp.findOne(this.spId);
+        if (sp === null) {
+            return null;
+        }
+        var targetSubspName = this.subspName;
+        var targetSubsp = null;
+        sp.subspp.forEach(function (subsp) {
+            if (subsp.name === targetSubspName) {
+                targetSubsp = subsp;
+            }
+        });
+        if (targetSubsp === null) {
+            return null;
+        }
+        return {
+            spName: sp.name,
+            subspPicture: targetSubsp.picture
+        };
+    }
+});
+
 Meteor.methods({
     deleteAnimal: function (id) {
         Animals.remove(id);
     },
-    addAnimal: function (spId, subSpName) {
-        Animals.insert({spId: spId, subSpName: subSpName});
+    addAnimal: function (spId, subspName) {
+        Animals.insert({spId: spId, subspName: subspName});
     }
 });
-
-Animals.attachSchema(AnimalSchema);

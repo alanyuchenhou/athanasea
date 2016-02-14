@@ -33,5 +33,6 @@ meteortoys:allthings
 zimme:active-route
 gwendall:auth-client-callbacks
 datariot:ganalytics
+dburles:collection-helpers
 check
 reactive-var

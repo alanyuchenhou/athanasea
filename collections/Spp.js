@@ -40,7 +40,8 @@ SpSchema = new SimpleSchema({
         label: "Lifespan"
     },
     subspp: {
-        type: [Subsp]
+        type: [Subsp],
+        label: "Subspecies"
     },
     author: {
         type: String,

@@ -12,9 +12,6 @@ Template.RescueCenter.onCreated(function () {
 
 Template.RescueCenter.helpers({
     getAnimals: function () {
-        return Animals.find({});
-    },
-    getSp: function () {
-        return Spp.find({});
+        return Animals.find();
     }
 });
