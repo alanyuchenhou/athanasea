@@ -2,9 +2,8 @@
     <article class="recipe">
         <h3>{{name}}</h3>
         {{#if editMode}}
-            {{> quickForm collection="Animals" id=updateAnimalId type="update" doc=this autosave=true}}
+            {{> quickForm collection="Animals" id=animalId type="update" doc=this}}
         {{else}}
-            <p>description: {{description}}</p>
             <p>species ID: {{spId}}</p>
             <p>species name: {{spInfo.spName}}</p>
             <p>subspecies name: {{subspName}}</p>

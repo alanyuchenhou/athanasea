@@ -65,10 +65,4 @@ SpSchema = new SimpleSchema({
     }
 });
 
-Meteor.methods({
-    deleteSp: function (id) {
-        Spp.remove(id);
-    }
-});
-
 Spp.attachSchema(SpSchema);

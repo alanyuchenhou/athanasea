@@ -7,6 +7,9 @@ Animals.allow({
     insert: function (userId, doc) {
         return !!userId;
     },
+    remove: function (userId, doc) {
+        return !!userId;
+    },
     update: function (userId, doc) {
         return !!userId;
     }
@@ -15,17 +18,7 @@ Animals.allow({
 AnimalSchema = new SimpleSchema({
     name: {
         type: String,
-        label: "Name",
-        autoValue: function () {
-            return 'Give me a name!';
-        }
-    },
-    description: {
-        type: String,
-        label: "Description",
-        autoValue: function () {
-            return 'Give me some description!';
-        }
+        label: "Name"
     },
     spId: {
         type: String,
@@ -83,25 +76,5 @@ Animals.helpers({
             spName: sp.name,
             subspPicture: targetSubsp.picture
         };
-    }
-});
-
-Meteor.methods({
-    deleteAnimal: function (id) {
-        Animals.remove(id);
-    },
-    addAnimal: function (spId, subspObj) {
-        //random pick
-        var _n = Math.random();
-        //linear normalize  xnorm = x-xmin/xmax-xmin
-        for (var i = 0; i < subspObj.length - 1; i++) {
-            subspObj[i + 1].possibility += subspObj[i].possibility;
-        }
-        for (i = 0; i < subspObj.length; i++) {
-            if (_n <= subspObj[i].possibility / subspObj[subspObj.length - 1].possibility) {
-                Animals.insert({spId: spId, subspName: subspObj[i].name});
-                return;
-            }
-        }
     }
 });

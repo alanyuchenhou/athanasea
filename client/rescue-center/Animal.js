@@ -7,6 +7,9 @@ Template.Animal.onCreated(function () {
 });
 
 Template.Animal.helpers({
+    animalId: function () {
+        return this._id;
+    },
     editMode: function () {
         return Template.instance().editMode.get();
     }
@@ -17,7 +20,7 @@ Template.Animal.events({
         Meteor.call('toggleMenuItem', this._id, this.inMenu);
     },
     'click .fa-trash': function () {
-        Meteor.call('deleteAnimal', this._id);
+        Animals.remove(this._id);
     },
     'click .fa-pencil': function (event, template) {
         template.editMode.set(!template.editMode.get());
