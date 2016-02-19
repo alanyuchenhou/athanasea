@@ -1,6 +1,3 @@
-/**
- * Created by yuchen on 2/12/16.
- */
 
 Template.RescueCenter.onCreated(function () {
     var self = this;

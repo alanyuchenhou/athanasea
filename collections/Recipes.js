@@ -1,6 +1,4 @@
-/**
- * Created by yuchen on 2/12/16.
- */
+
 Recipes = new Mongo.Collection('recipes');
 
 Recipes.allow({

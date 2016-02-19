@@ -1,6 +1,3 @@
-/**
- * Created by yuchen on 2/12/16.
- */
 
 Template.Animal.onCreated(function () {
     this.editMode = new ReactiveVar(false);

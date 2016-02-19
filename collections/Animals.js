@@ -1,6 +1,4 @@
-/**
- * Created by yuchen on 2/12/16.
- */
+
 Animals = new Mongo.Collection('Animals');
 
 Animals.allow({

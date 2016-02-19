@@ -1,6 +1,4 @@
-/**
- * Created by yuchen on 2/12/16.
- */
+
 Spp = new Mongo.Collection('spp');
 
 Spp.allow({
