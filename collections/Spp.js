@@ -67,3 +67,7 @@ SpSchema = new SimpleSchema({
 });
 
 Spp.attachSchema(SpSchema);
+
+Spp.after.remove(function (userId, doc) {
+    Animals.remove({spId: doc._id});
+});
