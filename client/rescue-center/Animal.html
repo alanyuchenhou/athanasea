@@ -7,9 +7,19 @@
             <p>species ID: {{spId}}</p>
             <p>species name: {{spInfo.spName}}</p>
             <p>subspecies name: {{subspName}}</p>
-            <p>subspecies picture: {{spInfo.subspPicture}}</p>
+            <!--<p>subspecies picture: {{spInfo.subspPicture}}</p>-->
+            {{> imageView}}
         {{/if}}
         <i class="fa fa-pencil"></i>
         <i class="fa fa-trash"></i>
     </article>
+</template>
+<template name="imageView">
+    <div class="imageView">
+        {{#each images}}
+            <div>
+                <a href="{{this.url}}" target="_blank"><img src="{{this.url}}" alt={{spInfo.subspPicture}}/></a>
+            </div>
+        {{/each}}
+    </div>
 </template>

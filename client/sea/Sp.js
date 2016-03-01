@@ -41,3 +41,8 @@ Template.Sp.events({
         template.editMode.set(!template.editMode.get());
     }
 });
+ Template.body.events({
+     'click .js-af-remove-file':function(){
+
+     }
+ })

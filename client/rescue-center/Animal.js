@@ -26,3 +26,8 @@ Template.Animal.events({
         template.editMode.set(!template.editMode.get());
     }
 });
+Template.imageView.helpers({
+    images: function () {
+        return Images.find(this.spInfo().subspPicture); // Where Images is an FS.Collection instance
+    }
+});

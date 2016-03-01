@@ -6,6 +6,7 @@ Template.Sea.onCreated(function () {
     var self = this;
     self.autorun(function () {
         self.subscribe('spp');
+        self.subscribe('images');
     });
 });
 

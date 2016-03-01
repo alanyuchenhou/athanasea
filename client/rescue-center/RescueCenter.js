@@ -7,6 +7,7 @@ Template.RescueCenter.onCreated(function () {
     self.autorun(function () {
         self.subscribe('animals');
         self.subscribe('spp');
+        self.subscribe('images');
     });
 });
 

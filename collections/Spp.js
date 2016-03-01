@@ -24,8 +24,15 @@ Subsp = new SimpleSchema({
         decimal: true,
         max: 1
     },
-    picture: {
-        type: String
+    picture:{
+        type: String,
+        autoform:{
+            afFieldInput:{
+                type: 'fileUpload',
+                collection: 'Images',
+                label: 'Choose file'
+            }
+        }
     }
 });
 
