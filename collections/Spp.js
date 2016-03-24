@@ -36,7 +36,7 @@ Sp = new SimpleSchema({
     },
     subspp: {
         type: [Subsp],
-        label: "Subspecies"
+        label: "Subsp"
     },
     author: {
         type: String,

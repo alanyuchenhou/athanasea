@@ -57,9 +57,6 @@ Animals.attachSchema(Animal);
 Animals.helpers({
     spInfo: function () {
         var sp = Spp.findOne(this.spId);
-        if (sp === null) {
-            return null;
-        }
         var targetSubspName = this.subspName;
         var targetSubsp = null;
         sp.subspp.forEach(function (subsp) {
