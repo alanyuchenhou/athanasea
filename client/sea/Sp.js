@@ -31,9 +31,6 @@ Template.Sp.events({
             }
         }
     },
-    'click .fa-trash': function () {
-        Spp.remove(this._id);
-    },
     'click .fa-pencil': function (event, template) {
         template.editMode.set(!template.editMode.get());
     }
