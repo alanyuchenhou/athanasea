@@ -1,16 +1,11 @@
 <template name="Sp">
     <article class="recipe">
         <h3>{{name}}</h3>
-        {{#if editMode}}
-            {{> quickForm collection="Spp" id=updateSpId type="update" doc=this autosave=true}}
-        {{else}}
-            <p>description: {{description}}</p>
-            <p>lifespan: {{lifespan}}</p>
-            {{#each subspp}}
-                <p>subspecies name: {{name}}, possibility: {{possibility}}, {{picture}}</p>
-            {{/each}}
-        {{/if}}
+        <p>description: {{description}}</p>
+        <p>lifespan: {{lifespan}}</p>
+        {{#each subspp}}
+            <p>subspecies name: {{name}}, possibility: {{possibility}}, {{picture}}</p>
+        {{/each}}
         <i class="fa fa-ambulance"></i>
-        <i class="fa fa-pencil"></i>
     </article>
 </template>

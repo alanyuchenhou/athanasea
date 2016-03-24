@@ -1,17 +1,4 @@
 
-Template.Sp.onCreated(function () {
-    this.editMode = new ReactiveVar(false);
-});
-
-Template.Sp.helpers({
-    updateSpId: function () {
-        return this._id;
-    },
-    editMode: function () {
-        return Template.instance().editMode.get();
-    }
-});
-
 Template.Sp.events({
     'click .toggle-menu': function () {
         Meteor.call('toggleMenuItem', this._id, this.inMenu);
@@ -30,8 +17,5 @@ Template.Sp.events({
                 return;
             }
         }
-    },
-    'click .fa-pencil': function (event, template) {
-        template.editMode.set(!template.editMode.get());
     }
 });
