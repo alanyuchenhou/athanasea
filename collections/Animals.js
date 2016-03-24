@@ -13,7 +13,7 @@ Animals.allow({
     }
 });
 
-AnimalSchema = new SimpleSchema({
+Animal = new SimpleSchema({
     name: {
         type: String,
         label: "Name"
@@ -52,7 +52,7 @@ AnimalSchema = new SimpleSchema({
     }
 });
 
-Animals.attachSchema(AnimalSchema);
+Animals.attachSchema(Animal);
 
 Animals.helpers({
     spInfo: function () {

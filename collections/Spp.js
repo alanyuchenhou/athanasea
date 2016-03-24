@@ -27,7 +27,7 @@ Subsp = new SimpleSchema({
     }
 });
 
-SpSchema = new SimpleSchema({
+Sp = new SimpleSchema({
     name: {
         type: String,
         label: "Name"
@@ -66,7 +66,7 @@ SpSchema = new SimpleSchema({
     }
 });
 
-Spp.attachSchema(SpSchema);
+Spp.attachSchema(Sp);
 
 Spp.after.remove(function (userId, doc) {
     Animals.remove({spId: doc._id});
