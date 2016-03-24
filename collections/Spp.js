@@ -1,12 +1,6 @@
 
 Spp = new Mongo.Collection('spp');
 
-Spp.allow({
-    insert: function (userId, doc) {
-        return !!userId;
-    }
-});
-
 Subsp = new SimpleSchema({
     name: {
         type: String

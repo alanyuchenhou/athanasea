@@ -11,9 +11,3 @@ Template.Sea.helpers({
         return Spp.find({});
     }
 });
-
-Template.Sea.events({
-    'click .new-recipe': function () {
-        Session.set('newRecipe', true);
-    }
-});
