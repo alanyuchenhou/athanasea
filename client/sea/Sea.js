@@ -8,6 +8,6 @@ Template.Sea.onCreated(function () {
 
 Template.Sea.helpers({
     getSpp: function () {
-        return Spp.find({});
+        return Spp.find({appearDate: {$lt: new Date()}, disappearDate: {$gt: new Date()}});
     }
 });

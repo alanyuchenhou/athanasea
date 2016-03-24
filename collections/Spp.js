@@ -42,9 +42,17 @@ Sp = new SimpleSchema({
             type: 'hidden'
         }
     },
-    createdAt: {
+    appearDate: {
         type: Date,
-        label: "Created At",
+        label: "appearDate"
+    },
+    disappearDate: {
+        type: Date,
+        label: "disappearDate"
+    },
+    createDate: {
+        type: Date,
+        label: "createDate",
         autoValue: function () {
             return new Date();
         },

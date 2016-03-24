@@ -40,9 +40,9 @@ Animal = new SimpleSchema({
             type: 'hidden'
         }
     },
-    createdAt: {
+    createDate: {
         type: Date,
-        label: "Created At",
+        label: "createDate",
         autoValue: function () {
             return new Date();
         },
