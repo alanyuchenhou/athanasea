@@ -17,24 +17,19 @@ Subsp = new SimpleSchema({
 
 Sp = new SimpleSchema({
     name: {
-        type: String,
-        label: "Name"
+        type: String
     },
     description: {
-        type: String,
-        label: "Description"
+        type: String
     },
     lifespan: {
-        type: Number,
-        label: "Lifespan"
+        type: Number
     },
     subspp: {
-        type: [Subsp],
-        label: "Subsp"
+        type: [Subsp]
     },
     author: {
         type: String,
-        label: "Author",
         autoValue: function () {
             return this.userId;
         },
@@ -43,16 +38,13 @@ Sp = new SimpleSchema({
         }
     },
     appearDate: {
-        type: Date,
-        label: "appearDate"
+        type: Date
     },
     disappearDate: {
-        type: Date,
-        label: "disappearDate"
+        type: Date
     },
     createDate: {
         type: Date,
-        label: "createDate",
         autoValue: function () {
             return new Date();
         },

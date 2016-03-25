@@ -15,8 +15,7 @@ Animals.allow({
 
 Animal = new SimpleSchema({
     name: {
-        type: String,
-        label: "Name"
+        type: String
     },
     spId: {
         type: String,
@@ -32,7 +31,6 @@ Animal = new SimpleSchema({
     },
     owner: {
         type: String,
-        label: "Owner",
         autoValue: function () {
             return this.userId;
         },
@@ -42,7 +40,6 @@ Animal = new SimpleSchema({
     },
     createDate: {
         type: Date,
-        label: "createDate",
         autoValue: function () {
             return new Date();
         },
