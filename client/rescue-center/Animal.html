@@ -1,8 +1,8 @@
 <template name="Animal">
     <article class="recipe">
         <h3>animal</h3>
-        {{#if editMode}}
-            {{> quickForm collection="Animals" id=animalId type="update" doc=this}}
+        {{#if inEditMode}}
+            {{> quickForm collection="Animals" id=_id type="update" doc=this}}
         {{else}}
             <p>animal name: {{name}}</p>
             <p>animal age: {{Info.age}}</p>

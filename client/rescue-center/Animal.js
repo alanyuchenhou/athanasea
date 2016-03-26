@@ -4,10 +4,7 @@ Template.Animal.onCreated(function () {
 });
 
 Template.Animal.helpers({
-    animalId: function () {
-        return this._id;
-    },
-    editMode: function () {
+    inEditMode: function () {
         return Template.instance().editMode.get();
     }
 });
