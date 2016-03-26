@@ -5,13 +5,19 @@ Subsp = new SimpleSchema({
     name: {
         type: String
     },
+    picture: {
+        type: String
+    },
+    description: {
+        type: String
+    },
+    matureAge: {
+        type: Number
+    },
     possibility: {
         type: Number,
         decimal: true,
         max: 1
-    },
-    picture: {
-        type: String
     }
 });
 
@@ -19,11 +25,11 @@ Sp = new SimpleSchema({
     name: {
         type: String
     },
-    description: {
+    picture: {
         type: String
     },
-    lifespan: {
-        type: Number
+    description: {
+        type: String
     },
     subspp: {
         type: [Subsp]

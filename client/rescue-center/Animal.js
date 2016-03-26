@@ -7,6 +7,9 @@ Template.Animal.helpers({
     animalId: function () {
         return this._id;
     },
+    age: function () {
+        return moment(new Date()).diff(moment(this.createDate), 'days');
+    },
     editMode: function () {
         return Template.instance().editMode.get();
     }

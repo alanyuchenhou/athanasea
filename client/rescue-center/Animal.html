@@ -4,6 +4,7 @@
         {{#if editMode}}
             {{> quickForm collection="Animals" id=animalId type="update" doc=this}}
         {{else}}
+            k <p>age: {{age}}</p>
             <p>species ID: {{spId}}</p>
             <p>species name: {{spInfo.spName}}</p>
             <p>subspecies name: {{subspName}}</p>
