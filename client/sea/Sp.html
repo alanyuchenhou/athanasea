@@ -1,9 +1,9 @@
 <template name="Sp">
     <article class="recipe">
-        <h3>name: {{name}}</h3>
-        <p>description: {{description}}</p>
+        <h3>species</h3>
+        <p>species name: {{name}}, species picture(young): {{picture}}</p>
         {{#each subspp}}
-            <p>subspecies name: {{name}}, possibility: {{possibility}}, picture: {{picture}}</p>
+            <p>subspecies name: {{name}}, subspecies picture(adult): {{picture}}, possibility: {{possibility}}</p>
         {{/each}}
         <i class="fa fa-ambulance"></i>
     </article>

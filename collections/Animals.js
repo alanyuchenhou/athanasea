@@ -52,7 +52,7 @@ Animal = new SimpleSchema({
 Animals.attachSchema(Animal);
 
 Animals.helpers({
-    spInfo: function () {
+    Info: function () {
         var sp = Spp.findOne(this.spId);
         var targetSubspName = this.subspName;
         var targetSubsp = null;
@@ -64,9 +64,17 @@ Animals.helpers({
         if (targetSubsp === null) {
             return null;
         }
+        var currentAge = moment(new Date()).diff(moment(this.createDate), 'days');
+        var picture = null;
+        if (currentAge < targetSubsp.matureAge) {
+            picture = sp.picture;
+        } else {
+            picture = targetSubsp.picture;
+        }
         return {
             spName: sp.name,
-            subspPicture: targetSubsp.picture
+            age: currentAge,
+            picture: picture
         };
     }
 });
