@@ -1,13 +1,14 @@
 <template name="Animal">
     <article class="recipe">
-        <h3>{{name}}</h3>
-        {{#if editMode}}
-            {{> quickForm collection="Animals" id=animalId type="update" doc=this}}
+        <h3>animal</h3>
+        {{#if inEditMode}}
+            {{> quickForm collection="Animals" id=_id type="update" doc=this}}
         {{else}}
-            <p>species ID: {{spId}}</p>
-            <p>species name: {{spInfo.spName}}</p>
+            <p>animal name: {{name}}</p>
+            <p>animal age: {{Info.age}}</p>
+            <p>animal picture: {{Info.picture}}</p>
+            <p>species name: {{Info.spName}}</p>
             <p>subspecies name: {{subspName}}</p>
-            <p>subspecies picture: {{spInfo.subspPicture}}</p>
         {{/if}}
         <i class="fa fa-pencil"></i>
         <i class="fa fa-trash"></i>

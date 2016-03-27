@@ -13,10 +13,9 @@ Animals.allow({
     }
 });
 
-AnimalSchema = new SimpleSchema({
+Animal = new SimpleSchema({
     name: {
-        type: String,
-        label: "Name"
+        type: String
     },
     spId: {
         type: String,
@@ -32,7 +31,6 @@ AnimalSchema = new SimpleSchema({
     },
     owner: {
         type: String,
-        label: "Owner",
         autoValue: function () {
             return this.userId;
         },
@@ -40,9 +38,8 @@ AnimalSchema = new SimpleSchema({
             type: 'hidden'
         }
     },
-    createdAt: {
+    createDate: {
         type: Date,
-        label: "Created At",
         autoValue: function () {
             return new Date();
         },
@@ -52,14 +49,11 @@ AnimalSchema = new SimpleSchema({
     }
 });
 
-Animals.attachSchema(AnimalSchema);
+Animals.attachSchema(Animal);
 
 Animals.helpers({
-    spInfo: function () {
+    Info: function () {
         var sp = Spp.findOne(this.spId);
-        if (sp === null) {
-            return null;
-        }
         var targetSubspName = this.subspName;
         var targetSubsp = null;
         sp.subspp.forEach(function (subsp) {
@@ -70,9 +64,17 @@ Animals.helpers({
         if (targetSubsp === null) {
             return null;
         }
+        var currentAge = moment(new Date()).diff(moment(this.createDate), 'days');
+        var picture = null;
+        if (currentAge < targetSubsp.matureAge) {
+            picture = sp.picture;
+        } else {
+            picture = targetSubsp.picture;
+        }
         return {
             spName: sp.name,
-            subspPicture: targetSubsp.picture
+            age: currentAge,
+            picture: picture
         };
     }
 });

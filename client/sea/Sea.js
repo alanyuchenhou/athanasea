@@ -8,12 +8,6 @@ Template.Sea.onCreated(function () {
 
 Template.Sea.helpers({
     getSpp: function () {
-        return Spp.find({});
-    }
-});
-
-Template.Sea.events({
-    'click .new-recipe': function () {
-        Session.set('newRecipe', true);
+        return Spp.find({appearDate: {$lt: new Date()}, disappearDate: {$gt: new Date()}});
     }
 });

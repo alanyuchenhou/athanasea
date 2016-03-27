@@ -4,18 +4,12 @@ Template.Animal.onCreated(function () {
 });
 
 Template.Animal.helpers({
-    animalId: function () {
-        return this._id;
-    },
-    editMode: function () {
+    inEditMode: function () {
         return Template.instance().editMode.get();
     }
 });
 
 Template.Animal.events({
-    'click .toggle-menu': function () {
-        Meteor.call('toggleMenuItem', this._id, this.inMenu);
-    },
     'click .fa-trash': function () {
         Animals.remove(this._id);
     },

@@ -1,52 +1,41 @@
 
 Spp = new Mongo.Collection('spp');
 
-Spp.allow({
-    insert: function (userId, doc) {
-        return !!userId;
-    },
-    remove: function (userId, doc) {
-        return !!userId;
-    },
-    update: function (userId, doc) {
-        return !!userId;
-    }
-});
-
 Subsp = new SimpleSchema({
     name: {
         type: String
+    },
+    picture: {
+        type: String
+    },
+    description: {
+        type: String
+    },
+    matureAge: {
+        type: Number
     },
     possibility: {
         type: Number,
         decimal: true,
         max: 1
-    },
-    picture: {
-        type: String
     }
 });
 
-SpSchema = new SimpleSchema({
+Sp = new SimpleSchema({
     name: {
-        type: String,
-        label: "Name"
+        type: String
+    },
+    picture: {
+        type: String
     },
     description: {
-        type: String,
-        label: "Description"
-    },
-    lifespan: {
-        type: Number,
-        label: "Lifespan"
+        type: String
     },
     subspp: {
-        type: [Subsp],
-        label: "Subspecies"
+        type: [Subsp]
     },
     author: {
         type: String,
-        label: "Author",
         autoValue: function () {
             return this.userId;
         },
@@ -54,9 +43,14 @@ SpSchema = new SimpleSchema({
             type: 'hidden'
         }
     },
-    createdAt: {
+    appearDate: {
+        type: Date
+    },
+    disappearDate: {
+        type: Date
+    },
+    createDate: {
         type: Date,
-        label: "Created At",
         autoValue: function () {
             return new Date();
         },
@@ -66,7 +60,7 @@ SpSchema = new SimpleSchema({
     }
 });
 
-Spp.attachSchema(SpSchema);
+Spp.attachSchema(Sp);
 
 Spp.after.remove(function (userId, doc) {
     Animals.remove({spId: doc._id});
